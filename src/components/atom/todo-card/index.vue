@@ -5,21 +5,18 @@
     width="100%"
     class="todo-card d-flex flex-row align-center"
   >
-    <v-checkbox
+    <input
       data-cy="todo-item-checkbox"
-      v-model="item.is_checked"
-      color="#16ABF8"
-      class="mt-1 pt-0 mr-4"
-      hide-details
-      @change="(e) => $emit('onActiveChange', e)"
+      type="checkbox"
+      class="todo-check mr-6 mt-1"
+      :checked="item.is_checked"
+      @change="({ target: { checked } }) => $emit('onActiveChange', checked)"
     />
     <span
       data-cy="todo-item-title"
       class="priority-dot title mr-4"
-      :class="item.priority"
-    >
-      {{ item.title }}
-    </span>
+      :class="`${item.priority} ${item.is_checked ? 'muted' : ''}`"
+    >{{ item.title }}</span>
     <v-btn data-cy="todo-item-edit-button" icon @click="$emit('edit')">
       <v-icon size="16">$editActivity</v-icon>
     </v-btn>

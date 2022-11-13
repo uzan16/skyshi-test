@@ -55,14 +55,18 @@
         <v-list class="py-0 sort-option" data-cy="sort-parent">
           <template v-for="(item, index) in sortOptions">
             <v-list-item
-              :data-cy="`sort-${item.value}`"
+              :data-cy="`sort-selection`"
               :key="index"
               @click="sortSelected = item.value"
             >
               <v-list-item-icon class="mr-3">
                 <v-icon size="20">{{ item.icon }}</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>
+              <v-list-item-content
+                :data-cy="
+                  sortSelected === item.value ? 'sort-selection-selected' : ''
+                "
+              >
                 <div class="d-flex flex-row align-center">
                   <v-list-item-title
                     v-text="item.label"

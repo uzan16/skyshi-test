@@ -1,5 +1,11 @@
 <template>
-  <v-card v-if="item !== undefined" width="100%" outlined class="activity-card">
+  <v-card
+    data-cy="activity-item"
+    v-if="item !== undefined"
+    width="100%"
+    outlined
+    class="activity-card"
+  >
     <div class="card-content pa-6 pointer" @click.stop="$emit('click')">
       <span data-cy="activity-item-title" class="title">
         {{ item.title }}

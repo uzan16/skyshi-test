@@ -135,6 +135,10 @@ $font-family: 'Poppins';
             color: #888888;
             text-decoration: line-through;
         }
+        .todo-check {
+            width: 24px;
+            height: 24px;
+        }
     }
     .todo-card:not(:first-child) {
         margin-top: 10px;

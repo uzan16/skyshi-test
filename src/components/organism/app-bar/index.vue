@@ -8,7 +8,7 @@
     data-cy="header-background"
   >
     <div class="container">
-      <v-toolbar-title data-cy="header-title">To Do List App</v-toolbar-title>
+      <v-toolbar-title data-cy="header-title">TO DO LIST APP</v-toolbar-title>
     </div>
   </v-app-bar>
 </template>
