@@ -13,8 +13,7 @@ const routes = [
   {
     path: "/todo/:id",
     name: "AppTodo",
-    component: () =>
-      import(/* webpackChunkName: "todo" */ "@/views/todo")
+    component: () => import(/* webpackChunkName: "todo" */ "@/views/todo")
   },
   {
     path: "*",
