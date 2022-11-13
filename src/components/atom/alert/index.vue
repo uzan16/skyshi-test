@@ -4,6 +4,7 @@
     :value="alert.show"
     width="500"
     @click:outside="doCancel"
+    @keydown="({keyCode}) => keyCode === 27 ? doCancel() : null"
   >
     <v-card class="d-flex flex-row align-center px-7 py-5">
       <v-icon data-cy="modal-information-icon" size="24" color="#00A790">

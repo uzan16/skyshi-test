@@ -4,6 +4,7 @@
     :value="deleteDialog.show"
     width="500"
     @click:outside="doCancel"
+    @keydown="({keyCode}) => keyCode === 27 ? doCancel() : null"
   >
     <v-card class="d-flex flex-column align-center pa-7">
       <v-icon data-cy="modal-delete-icon" size="64"> $modalDeleteIcon </v-icon>
