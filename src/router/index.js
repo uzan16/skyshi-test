@@ -6,13 +6,19 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "AppDashboard",
+    name: "AppActivity",
     component: () =>
-      import(/* webpackChunkName: "dashboard" */ "@/views/dashboard")
+      import(/* webpackChunkName: "activity" */ "@/views/activity")
+  },
+  {
+    path: "/todo/:id",
+    name: "AppTodo",
+    component: () =>
+      import(/* webpackChunkName: "todo" */ "@/views/todo")
   },
   {
     path: "*",
-    redirect: { name: "AppDashboard" }
+    redirect: { name: "AppActivity" }
   }
 ];
 

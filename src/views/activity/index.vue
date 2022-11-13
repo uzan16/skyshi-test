@@ -30,7 +30,7 @@
         :key="item.id"
         :data-cy="`activity-item-${i}`"
       >
-        <activity-card :item="item" @delete="deleteActivity(item)" />
+        <activity-card :item="item" @click="goToDetail(item)" @delete="deleteActivity(item)" />
       </v-col>
     </v-row>
   </content-wrapper>
@@ -39,7 +39,7 @@
 <script>
 import { ActivityCard } from "@/components/atom";
 export default {
-  name: "AppDashboard",
+  name: "AppActivity",
   data() {
     return {
       isLoading: false,
@@ -100,6 +100,14 @@ export default {
       } catch (e) {
         // TODDO: handle error
       }
+    },
+    goToDetail: async function ({id}) {
+      this.$router.push({
+        name: 'AppTodo',
+        params: {
+          id
+        }
+      })
     }
   }
 };
