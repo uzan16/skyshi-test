@@ -5,7 +5,28 @@ $font-family: 'Poppins';
       font-family: $font-family, sans-serif !important;
     }
     font-family: $font-family, sans-serif !important;
-  }
+
+    .v-btn {
+        text-transform: capitalize;
+    }
+    .v-btn.v-size--x-large {
+        font-size: 1.125rem;
+        
+        .v-icon {
+            font-size: 24px;
+        }
+    }
+    .v-dialog {
+        border-radius: 12px;
+        
+        .modal-delete-title{
+            font-size: 18px;
+        }
+        .modal-information-title{
+            font-size: 16px;
+        }
+    }
+}
 
 .sk-appbar {
     .v-toolbar__title {
@@ -17,17 +38,6 @@ $font-family: 'Poppins';
 
 .v-main {
     background-color: #F4F4F4;
-    
-    .v-btn {
-        text-transform: capitalize;
-    }
-    .v-btn.v-size--x-large {
-        font-size: 1.125rem;
-        
-        .v-icon {
-            font-size: 24px;
-        }
-    }
 }
 
 .content-wrapper {
@@ -35,5 +45,22 @@ $font-family: 'Poppins';
         color: #111111;
         font-size: 2.25rem;
         font-weight: 700;
+    }
+    .activity-card {
+        border-radius: 12px;
+        .card-content {
+            height: 158px;
+
+            .title {
+                font-size: 18px;
+                font-weight: 700;
+                color: #111111;
+            }
+        }
+        .footer-text {
+            font-size: 0.875em;
+            color: #888888;
+            font-weight: 500;
+        }
     }
 }

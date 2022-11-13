@@ -1,9 +1,21 @@
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
+import deleteIconSvg from "@/assets/icons/activity-item-delete-button.vue";
+import modalDeleteIcon from "@/assets/icons/modal-delete-icon.vue";
 
 Vue.use(Vuetify);
 
 export default new Vuetify({
+  icons: {
+    values: {
+      deleteIcon: {
+        component: deleteIconSvg
+      },
+      modalDeleteIcon: {
+        component: modalDeleteIcon
+      }
+    }
+  },
   theme: {
     options: {
       customProperties: true
