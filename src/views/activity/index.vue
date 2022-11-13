@@ -18,6 +18,7 @@
     </template>
     <v-img
       data-cy="activity-empty-state"
+      class="activity-empty-state mx-auto"
       v-if="data.length === 0"
       contain
       :src="require(`@/assets/images/activity-empty-state.png`)"
@@ -30,7 +31,11 @@
         :key="item.id"
         :data-cy="`activity-item-${i}`"
       >
-        <activity-card :item="item" @click="goToDetail(item)" @delete="deleteActivity(item)" />
+        <activity-card
+          :item="item"
+          @click="goToDetail(item)"
+          @delete="deleteActivity(item)"
+        />
       </v-col>
     </v-row>
   </content-wrapper>
@@ -87,7 +92,7 @@ export default {
     deleteActivity: async function (item) {
       try {
         const res = await this.$dialog.showDeleteConfirmation(
-          item,
+          item.title,
           "activity",
           async () => {
             await this.$http.delete(`/activity-groups/${item.id}`);
@@ -101,13 +106,13 @@ export default {
         // TODDO: handle error
       }
     },
-    goToDetail: async function ({id}) {
+    goToDetail: async function ({ id }) {
       this.$router.push({
-        name: 'AppTodo',
+        name: "AppTodo",
         params: {
           id
         }
-      })
+      });
     }
   }
 };

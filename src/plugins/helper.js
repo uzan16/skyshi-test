@@ -17,7 +17,7 @@ export default {
           store.commit("setDeleteDialog", {
             show: true,
             type,
-            data: item.title,
+            data: item,
             callback: async ({ isCancel }) => {
               if (isCancel) {
                 store.commit("setDeleteDialog", {

@@ -25,9 +25,66 @@ $font-family: 'Poppins';
         .modal-information-title{
             font-size: 16px;
         }
+        .sk-form {
+            .form-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #111111;
+            }
+            .field-caption {
+                font-weight: 600;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #111111;
+            }
+            .form-group:not(:first-child) {
+                margin-top: 26px;
+            }
+            .v-card__actions {
+                border-top-style: solid;
+                border-top-width: 1px;
+                border-top-color: #E5E5E5;
+            }
+            .form-btn {
+                font-size: 18px;
+                font-weight: 600;
+                padding: 13.5px 39px;
+                height: 54px;
+            }
+            .field-priority {
+                width: 205px;
+            }
+        }
     }
     .pointer {
         cursor: pointer;
+    }
+    .priority-dot:before {
+        content: "\A";
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 18px;
+        vertical-align: middle;
+    }
+    .priority-dot.very-high:before {
+        background-color: #ED4C5C;
+    }
+    .priority-dot.high:before {
+        background-color: #F8A541;
+    }
+    .priority-dot.normal:before {
+        background-color: #00A790;
+    }
+    .priority-dot.low:before {
+        background-color: #428BC1;
+    }
+    .priority-dot.very-low:before {
+        background-color: #8942C1;
+    }
+    .sort-option {
+        border-radius: 6px;
     }
 }
 
@@ -65,5 +122,24 @@ $font-family: 'Poppins';
             color: #888888;
             font-weight: 500;
         }
+    }
+    .todo-card {
+        border-radius: 12px;
+        padding: 26px;
+
+        .title {
+            font-size: 18px;
+            color: #111111;
+        }
+        .title.muted {
+            color: #888888;
+            text-decoration: line-through;
+        }
+    }
+    .todo-card:not(:first-child) {
+        margin-top: 10px;
+    }
+    .todo-empty-state, .activity-empty-state {
+        max-width: 50%;
     }
 }
